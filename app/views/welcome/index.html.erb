@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="card card-login">
+    <div class="card-header">
+      <img src="switchboard_logo.svg" />
+    </div>
+    <div class="card-body">
+      <h4>Sign in to Switchboard</h4>
+      <form class="form">
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username">
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="text" id="password" name="password">
+        </div>
+        <button onClick="alert('This login form is for visual demonstration only and serves no function in this application.');">Login</button>
+      </form>
+    </div>
+    <div class="card-footer">
+      <a class="button" tabindex="0" href="<%= authenticate_with_identity_path %>"><img src="clio-logo-white.svg" /> Sign in with Clio</a>
+    </div>
+    <div class="card-footer">
+      <p>
+        <small>This application demonstrates the ability to use single sign-on (SSO) with Clio's authentication services. By signing in with Clio above, Clio Identity and Clio Manage will both verify that you wish to allow this example application to access your Clio account.</small>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,161 @@
+button, a.button {
+  // Updated CSS for SSO button guidelines
+
+  display: flex;
+  padding: 0 12px;
+  position: relative;
+  height: 32px;
+  background-color: #0070e0;
+  background-image: linear-gradient(-180deg, #0070e0 0%, #0f478d 100%);
+  border: 1px solid #0f478d;
+  box-sizing: border-box;
+  border-radius: 3px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: bold;
+  align-items: center;
+  //justify-content: space-around;
+
+  &:hover,&:focus {
+    background-image: linear-gradient(-180deg, #0f478d 2%, #0f478d 100%);
+  }
+
+  &:hover:before {
+    content: "";
+    border-bottom: 2px solid #a3dcff;
+    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    right: 1px;
+    border-radius: 0 0 1px 1px;
+  }
+
+  &:focus:after {
+    box-shadow: 0 0 0 2px #0070e0;
+    outline: 1px solid transparent;
+    content: "";
+    border-radius: 4px;
+    border: 1px solid #fff;
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+  }
+
+  // White button theme from the styleguide
+
+  &.white {
+    color: #011C37;
+    background-color: #F5F7F8;
+    background-image: linear-gradient(-180deg, #f6f8f9 0%, #dfe6e9 100%);
+    border-color: #B0BEC5;
+
+    &:hover,&:focus {
+      background-image: linear-gradient(-180deg, #dfe6e9 2%, #dfe6e9 100%);
+    }
+
+    &:hover:before {
+      border-color: #011C37;
+    }
+
+    &:focus:after {
+      box-shadow: 0 0 0 2px #011C37;
+    }
+  }
+
+  // Black button theme from the styleguide
+
+  &.black {
+    color: #F5F7F8;
+    background-color: #011C37;
+    background-image: linear-gradient(-180deg, #202020 0%, #090909 100%);
+    border-color: #090909;
+
+    &:hover,&:focus {
+      background-image: linear-gradient(-180deg, #090909 2%, #090909 100%);
+    }
+
+    &:hover:before {
+      border-color: #F5F7F8;
+    }
+
+    &:focus:after {
+      box-shadow: 0 0 0 2px #090909;
+    }
+  }
+
+  //  Custom styles, overrides colours with Switchboard theme
+
+  width: -moz-available;
+  width: -webkit-fill-available;
+  justify-content: center;
+
+  color: #FFFFFF;
+  background-color: #10b9df;
+  background-image: linear-gradient(-180deg, #10b9df 0%, #0c91af 100%);
+  border: 1px solid #0c91af;
+
+  &:hover,&:focus {
+    background-image: linear-gradient(-180deg, #0c91af 2%, #0c91af 100%);
+  }
+
+  &:hover:before {
+    border-bottom: 2px solid #FFFFFF;
+  }
+
+  &:focus:after {
+    box-shadow: 0 0 0 2px #004670;
+  }
+}
+
+// For links that need to look like buttons
+
+a.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -ms-flex-pack: distribute;
+  justify-content: center;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+}
+
+// To position the Clio logo in the button/link
+
+button img, a.button img {
+  padding-right: 5px;
+  height: 20px;
+  width: 20px;
+}
+
+// Spcing for the pagination buttons
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  div {
+    margin-top: 0px !important;
+  }
+
+  .button {
+    &.previous {
+      width: 200px;
+    }
+
+    &.next {
+      width: 200px;
+    }
+  }
+}

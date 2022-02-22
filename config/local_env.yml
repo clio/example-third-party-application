@@ -1,0 +1,14 @@
+# Make sure you keep your secrets safe! How you do this is up to you, but in general:
+# * Never commit unencrypted secrets
+# * Don't share secrets in unencrypted messaging systems
+# * Store secrets safely
+
+CLIO_MANAGE_CLIENT_ID: "_YOUR_APP_CLIENT_ID_"
+CLIO_MANAGE_CLIENT_SECRET: "_YOUR_APP_CLIENT_SECRET_"
+CLIO_MANAGE_SITE_URL: "https://app.clio.com/api/v4/"
+
+CLIO_IDENTITY_CLIENT_ID: "_YOUR_APP_CLIENT_ID_"
+CLIO_IDENTITY_CLIENT_SECRET: "_YOUR_APP_CLIENT_SECRET_"
+CLIO_IDENTITY_SITE_URL: "https://account.clio.com/"
+
+ROOT_URL: "http://localhost:3013/"

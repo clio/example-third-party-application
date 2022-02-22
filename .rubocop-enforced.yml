@@ -1,0 +1,274 @@
+# Things added to this file are enforced by CI
+require:
+  - rubocop-rails
+AllCops:
+  DisabledByDefault: true
+  Include:
+    - '**/*.rb'
+    - '**/*.rake'
+    - '**/config.ru'
+    - '**/Gemfile'
+    - '**/Rakefile'
+
+################# Layout #################
+Layout/DefEndAlignment:
+  Description: 'Align ends corresponding to defs correctly.'
+  EnforcedStyleAlignWith: start_of_line
+  Enabled: true
+
+Layout/EmptyLines:
+  Description: "This cop checks for two or more consecutive blank lines."
+  StyleGuide: "https://github.com/rubocop-hq/ruby-style-guide#two-or-more-empty-lines"
+  Enabled: true
+
+Layout/EmptyLineBetweenDefs:
+  Description: 'Use empty lines between defs.'
+  # EmptyLineBetweenClassDefs disabled for now to preserve old behaviour
+  # added in 1.4.0 https://github.com/rubocop/rubocop/releases/tag/v1.4.0
+  EmptyLineBetweenClassDefs: false
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#empty-lines-between-methods'
+  Enabled: true
+
+Layout/EndOfLine:
+  Description: 'Use Unix-style line endings.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#crlf'
+  Enabled: true
+
+Layout/ExtraSpacing:
+  AllowForAlignment: true
+  Description: 'Do not use unnecessary spacing.'
+  Enabled: true
+
+Layout/HeredocIndentation:
+  Description: >-
+                This cops checks the indentation of the here document bodies.
+                The bodies are indented one step. In Ruby 2.3 or newer, squiggly heredocs (<<~) should be used.
+  Enabled: true
+
+Layout/SpaceAfterMethodName:
+  Description: >-
+                 Do not put a space between a method name and the opening
+                 parenthesis in a method definition.
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#parens-no-spaces'
+  Enabled: true
+
+Layout/SpaceAroundKeyword:
+  Description: 'Use a space around keywords if appropriate.'
+  Enabled: true
+
+Layout/SpaceAroundOperators:
+  Description: 'Use a single space around operators.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#spaces-operators'
+  Enabled: true
+
+Layout/SpaceBeforeBlockBraces:
+  Description: >-
+                 Checks that the left block brace has or doesn't have space
+                 before it.
+  Enabled: true
+  Exclude:
+    - "**/spec/**/*.rb"
+
+Layout/SpaceBeforeComma:
+  Description: 'No spaces before commas.'
+  Enabled: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  Description: "Use spaces inside hash literal braces - or don't."
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#spaces-operators'
+  Enabled: true
+
+Layout/TrailingEmptyLines:
+  # See also: https://robots.thoughtbot.com/no-newline-at-end-of-file
+  Description: 'Checks trailing blank lines and final newline.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#newline-eof'
+  Enabled: true
+
+Layout/TrailingWhitespace:
+  Enabled: true
+
+################# Lint #######################
+Lint/CircularArgumentReference:
+  Description: "Default values in optional keyword arguments and optional ordinal arguments should not refer back to the name of the argument."
+  Enabled: true
+
+Lint/Debugger:
+  Description: 'Check for debugger calls.'
+  Enabled: true
+
+Lint/DeprecatedClassMethods:
+  Enabled: true
+
+Lint/DuplicateHashKey:
+  Description: 'Check for duplicate keys in hash literals.'
+  Enabled: true
+
+Lint/EnsureReturn:
+  Enabled: true
+
+Lint/InheritException:
+  Enabled: true
+
+Lint/NestedMethodDefinition:
+  Description: 'Do not use nested method definitions.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-nested-methods'
+  Enabled: true
+
+Lint/RescueException:
+  Enabled: true
+
+Lint/RedundantStringCoercion:
+  Enabled: true
+
+Lint/UnreachableCode:
+  Enabled: true
+
+Lint/UnusedBlockArgument:
+  Description: 'Checks for unused block arguments.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#underscore-unused-vars'
+  Enabled: true
+
+################# Naming #######################
+Naming/AsciiIdentifiers:
+  Description: 'Use only ascii symbols in identifiers.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#english-identifiers'
+  Enabled: true
+
+Naming/ClassAndModuleCamelCase:
+  Description: 'Use CamelCase for classes and modules.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#camelcase-classes'
+  Enabled: true
+
+Naming/ConstantName:
+  Description: 'Constants should use SCREAMING_SNAKE_CASE.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#screaming-snake-case'
+  Enabled: true
+
+Naming/FileName:
+  Description: 'Use snake_case for source file names.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#snake-case-files'
+  Enabled: true
+
+################# Style #######################
+Style/ArrayJoin:
+  Description: 'Use Array#join instead of Array#*.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#array-join'
+  Enabled: true
+
+Style/BeginBlock:
+  Description: 'Avoid the use of BEGIN blocks.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-BEGIN-blocks'
+  Enabled: true
+
+Style/BlockComments:
+  Description: 'Do not use block comments.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-block-comments'
+  Enabled: true
+
+Style/BlockDelimiters:
+  Description: >-
+    Avoid using {...} for multi-line blocks (multiline chaining is
+    always ugly).
+    Prefer {...} over do...end for single-line blocks.
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#single-line-blocks'
+  Enabled: true
+
+Style/EndBlock:
+  Description: 'Avoid the use of END blocks.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-END-blocks'
+  Enabled: true
+
+Style/HashSyntax:
+  Enabled: true
+  EnforcedStyle: ruby19_no_mixed_keys
+  Exclude:
+
+Style/IfUnlessModifierOfIfUnless:
+  Description: >-
+    Avoid modifier if/unless usage on conditionals.
+  Enabled: true
+
+Style/IfWithSemicolon:
+  Description: 'Do not use if x; .... Use the ternary operator instead.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-semicolon-ifs'
+  Enabled: true
+
+Style/MethodCallWithoutArgsParentheses:
+  Description: 'Do not use parentheses for method calls with no arguments.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-args-no-parens'
+  Enabled: true
+
+Style/MissingRespondToMissing:
+  Enabled: true
+
+Style/RaiseArgs:
+  Description: 'Checks the arguments passed to raise/fail.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#exception-class-messages'
+  EnforcedStyle: compact
+  Enabled: false
+
+Style/RedundantReturn:
+  Description: "Don't use return where it's not required."
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-explicit-return'
+  Enabled: true
+
+Style/Semicolon:
+  Description: "Don't use semicolons to terminate expressions."
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-semicolon'
+  Enabled: true
+
+Style/SpecialGlobalVars:
+  Description: 'Avoid Perl-style global variables.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-cryptic-perlisms'
+  Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  Description: 'Prefer double-quotes unless your string literal contains " or escape characters you want to suppress.'
+  Enabled: true
+
+################# Rails Cops ##########################
+
+Rails/DynamicFindBy:
+  Description: "Favor the use of find_by over where.take and find_by_attribute when you need to retrieve a single record by one or more attributes and return nil when the record is not found"
+  Enabled: true
+
+Rails/EnumHash:
+  Description: "This cop looks for enums written with array syntax."
+  Enabled: true
+
+Rails/HttpPositionalArguments:
+  Enabled: true
+
+Rails/ActiveRecordAliases:
+  Enabled: true
+
+################# Security ####################
+
+Rails/OutputSafety:
+  Description: 'The use of `html_safe` or `raw` may be a security risk.'
+  Enabled: true
+  Exclude:
+    - "**/spec/**/*.rb"
+
+Security/Eval:
+  Description: 'The use of eval represents a serious security risk.'
+  Enabled: true
+
+Security/JSONLoad:
+  Enabled: true
+  Exclude:
+    - "**/spec/**/*.rb"
+    - "script/**/*.rb"
+
+Security/MarshalLoad:
+  Enabled: true
+
+Security/Open:
+  Enabled: true
+
+Security/YAMLLoad:
+  Enabled: true
+  Exclude:
+    - "**/spec/**/*.rb"
+    - "script/*"

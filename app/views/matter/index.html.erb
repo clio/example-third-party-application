@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <img src="/switchboard_logo.svg" />
+      <div class="nav-dropdown">
+        <a class="button">
+          <span class="menu-icon"></span>
+        </a>
+        <div class="nav-dropdown-content">
+          <a href="<%= profile_index_path %>">Profile (tokens, simple API example)</a>
+          <a href="<%= signout_path %>">Sign Out</a>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h1>Open Matters</h1>
+
+      <table class="data-table">
+        <tr>
+          <th>Display Number</th>
+          <th>Description</th>
+          <th>Status</th>
+        </tr>
+        <% matters.each do |matter| %>
+          <tr>
+            <td><%= matter["display_number"] %></td>
+            <td><%= matter["description"] %></td>
+            <td><%= matter["status"] %></td>
+          </tr>
+        <% end %>
+      </table>
+
+      <div class="pagination">
+        <div>
+          <% if paging["previous"].present? %>
+            <a href="<%= matter_paginate_path(page: paging["previous"]) %>" class="button previous">
+              Previous Page
+            </a>
+          <% end %>
+        </div>
+        <div>
+          <% if paging["next"].present? %>
+            <a href="<%= matter_paginate_path(page: paging["next"]) %>" class="button next">
+              Next Page
+            </a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

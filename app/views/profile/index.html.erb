@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <img src="/switchboard_logo.svg" />
+      <div class="nav-dropdown">
+        <a class="button">
+          <span class="menu-icon"></span>
+        </a>
+        <div class="nav-dropdown-content">
+          <a href="<%= matter_index_path %>">Matters (pagination example)</a>
+          <a href="<%= signout_path %>">Sign Out</a>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h1>Profile</h1>
+
+      <p>Hi <strong><%= data["first_name"] %></strong>! You have logged in to this example third-party application with single sign-on using your Clio account!</p>
+
+      <div>
+        <h4>Your Clio Identity ID Token</h4>
+        <pre><%= JSON.pretty_generate(cookies.encrypted[:id_token]) %></pre>
+      </div>
+
+      <div>
+        <h4>Your Clio Manage Access Token</h4>
+        <pre><%= cookies.encrypted[:manage_token] %></pre>
+      </div>
+
+      <div>
+        <h4>Manage GET api/v4/users/who_am_i?</h4>
+        <pre><%= JSON.pretty_generate(data) %></pre>
+      </div>
+    </div>
+  </div>
+</div>
