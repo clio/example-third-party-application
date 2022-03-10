@@ -26,7 +26,7 @@ Once your Developer Account has been set up, navigate to your [Developer Portal]
 
 Clio Identity is Clio's authentication service and identity provider. Similar to how you may see a "Login with GitHub" or "Login with Google" button when authenticating with an application on the web, third-party developers can leverage Clio Identity as an identity provider, cutting the time needed to write and maintain an authentication system for an application.
 
-A self-serve Developer Portal for Clio Identity is available through Clio My Account and is currently in a private beta phase. In the interim, please contact us directly at api@clio.com to request a Clio Identity API key.
+To request a Clio Identity API key in order to implement SSO, please get in touch with us at api@clio.com.
 
 ### PostgreSQL
 
