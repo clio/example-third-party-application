@@ -64,7 +64,6 @@ Update the environment variables in `config/local_env.yml`:
 
 Start up PostgreSQL (or run Postgres.app) and create a new database named `clio_third_party_integration_dev`
 
-
 ```
 psql --command="CREATE DATABASE clio_third_party_integration_dev"
 ```
