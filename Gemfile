@@ -26,8 +26,9 @@ gem "turbolinks", "~> 5"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.5"
 
-gem "http", "2.2.2"
+gem "http"
 gem "jwt"
+gem "secure_headers"
 
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
