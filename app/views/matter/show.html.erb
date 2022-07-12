@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <img src="/switchboard_logo.svg" />
+      <div class="nav-dropdown">
+        <a class="button">
+          <span class="menu-icon"></span>
+        </a>
+        <div class="nav-dropdown-content">
+          <a href="<%= profile_index_path %>">Profile (tokens, simple API example)</a>
+          <a href="<%= matter_index_path %>">Matters (pagination example)</a>
+          <a href="<%= signout_path %>">Sign Out</a>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h1><%= matter["display_number"] %></h1>
+      <table class="data-table">
+        <% matter.without("display_number").select do |attribute_key, value| %>
+        <tr>
+          <th><%= attribute_key %></th>
+          <td>
+            <% if value.is_a?(Hash) %>
+              </br>
+              <% value.each do |sub_attribute_key, sub_value| %>
+                <%= sub_attribute_key %>: <%= sub_value %></br>
+              <% end %>
+              </br>
+            <% elsif value.is_a?(Array) %>
+              </br>
+              <% value.each do |object|  %>
+                <% object.each do |sub_attribute_key, sub_value| %>
+                  <%= sub_attribute_key %>: <%= sub_value %></br>
+                <% end %>
+                </br>
+              <% end %>
+            <% else %>
+              <%= value %>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+      <div class="right">
+        <a href="<%= back %>" class="button">
+          Back
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
