@@ -6,9 +6,9 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
-gem "rails", "5.2.6"
+gem "rails", "5.2.7.1"
 # Use postgres as the database for Active Record
-gem "pg"
+gem "pg", "1.1.4"
 # Use Puma as the app server
 gem "puma"
 # Use SCSS for stylesheets
@@ -18,7 +18,7 @@ gem "uglifier", ">= 1.3.0"
 # Use CoffeeScript for .coffee assets and views
 gem "coffee-rails", "~> 4.2"
 # Used to enforce code style
-gem "rubocop-rails", "2.12.4"
+gem "rubocop-rails", "2.15.0"
 # Use jquery as the JavaScript library
 gem "jquery-rails"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -26,19 +26,20 @@ gem "turbolinks", "~> 5"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.5"
 
-gem "http"
-gem "jwt"
-gem "secure_headers"
+gem "http", "~> 2.2.2"
+gem "jwt", "2.3.0"
+gem "secure_headers", "6.3.1"
 
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
   gem "byebug", platform: :mri
+  gem "dotenv-rails"
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem "web-console", ">= 3.3.0"
-  gem "listen", "~> 3.0.5"
+  gem "listen", ">= 3.0.5", "< 3.2"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"

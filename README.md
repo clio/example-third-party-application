@@ -32,7 +32,7 @@ To request a Clio Identity API key in order to implement SSO see our guide for [
 
 First, clone the example application repository to your local environment: `git clone https://github.com/clio/example-third-party-application.git`.
 
-Then update the environment variables in `config/local_env.yml`:
+Then update the environment variables in `.env`:
 1. Update the `CLIO_MANAGE_CLIENT_ID` and `CLIO_MANAGE_CLIENT_SECRET` values with your Clio Manage API Key and Secret
 2. Update the `CLIO_MANAGE_SITE_URL` value with the region specific URL of your Clio Manage account:
     * `https://app.clio.com/` for the United States

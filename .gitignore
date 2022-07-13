@@ -67,7 +67,4 @@ yarn-debug.log*
 !/storage/.keep
 /public/uploads
 
-# Ignore local environment variables file
-/config/local_env
-
 .DS_Store
