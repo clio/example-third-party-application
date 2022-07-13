@@ -10,7 +10,7 @@ Also included in this example application is making use of the access token obta
 
 Note that this example code isn't in an ideal, refactored state. We've taken a "show your work" approach, clearly identifying the steps taken. In line with this we've also opted not to use some Ruby gems that might hide implementation details (such as `oauth2` that can automate part of the SSO flow for you).
 
-## Requirements
+## Prerequisites
 
 Whether you're a private developer or a company looking to integrate with Clio, the first step is to complete our [registration form](https://www.clio.com/partnerships/developers/get-started/). If you're looking to offer your integration to Clio customers, keep an eye out for an automatic follow-up email with instructions to setup your Developer Account on Clio Manage and Clio Identity.
 
@@ -28,33 +28,11 @@ Clio Identity is Clio's authentication service and identity provider. Similar to
 
 To request a Clio Identity API key in order to implement SSO see our guide for [integrating with Clio Identity](https://developers.support.clio.com/hc/en-us/articles/4405288237723-Integrating-with-Clio-Identity-Single-Sign-on-with-Clio-).
 
-### PostgreSQL
+### Setup
 
-This application utilizes [PostgreSQL](https://www.postgresql.org/) as it's database system. 
+First, clone the example application repository to your local environment: `git clone https://github.com/clio/example-third-party-application.git`.
 
-For macOS users, we recommend using [Postgres.app](https://postgresapp.com/), which is a simple, native macOS app that runs in the menubar without the need of an installer. Open the app, and you have a PostgreSQL server ready and awaiting new connections. Close the app, and the server shuts down.
-
-On macOS installing the `postgresql` package is also required to be able to use the `psql` client command, as well as to install any libraries that are required to build the `pg` driver for use with `rails`.
-
-```
-brew install postgresql
-```
-
-### Ruby and Rails
-
-This application utilizes Ruby 2.6.8 and Rails 5.2.6. These can be installed through a variety of methods using different package managers, choose the right one for your system and preferences.  
-
-## Installation
-
-To get the example third-party application running on your local environment, ensure that you have valid API key pairs for both Clio Manage and Clio Identity, and that you have PostgreSQL, Ruby and Rails installed, as described in the Requirements section above.
-
-Clone the repository to your local environment:
-
-```
-git clone https://github.com/clio/example-third-party-application.git
-```
-
-Update the environment variables in `config/local_env.yml`:
+Then update the environment variables in `config/local_env.yml`:
 1. Update the `CLIO_MANAGE_CLIENT_ID` and `CLIO_MANAGE_CLIENT_SECRET` values with your Clio Manage API Key and Secret
 2. Update the `CLIO_MANAGE_SITE_URL` value with the region specific URL of your Clio Manage account:
     * `https://app.clio.com/` for the United States
@@ -62,25 +40,7 @@ Update the environment variables in `config/local_env.yml`:
     * `https://eu.app.clio.com/` for Europe
 3. Update the `CLIO_IDENTITY_CLIENT_ID` and `CLIO_IDENTITY_CLIENT_SECRET` values with your Clio Identity API Key and Secret
 
-Start up PostgreSQL (or run Postgres.app) and create a new database named `clio_third_party_integration_dev`
-
-```
-psql --command="CREATE DATABASE clio_third_party_integration_dev"
-```
-
-Run the install bundle:
-
-```
-bundle install
-```
-
-Run the application:
-
-```
-rails s -p 3013    
-```
-
-The example third-party application should now be running at http://localhost:3013/.
+You can then choose between a manual setup (install Ruby, Rails and Postgres locally) or a docker setup (install Docker only). Manual setup instructions can be found in [docs/manual_setup.md](/docs/manual_setup.md) and the Docker setup instructions can be found in [docs/docker_setup.md](/docs/docker_setup.md).
 
 ## Example Entry Point
 
