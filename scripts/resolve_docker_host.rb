@@ -6,4 +6,4 @@ docker_host_ip = begin
                    "127.0.0.1"
                  end
 
-File.write("config/local_env.yml", "DOCKER_HOST_IP: \"#{docker_host_ip}\"", mode: "a")
+File.write(".env", "DOCKER_HOST_IP=#{docker_host_ip}", mode: "a")
