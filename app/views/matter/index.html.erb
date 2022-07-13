@@ -20,12 +20,18 @@
           <th>Display Number</th>
           <th>Description</th>
           <th>Status</th>
+          <th></th>
         </tr>
         <% matters.each do |matter| %>
           <tr>
             <td><%= matter["display_number"] %></td>
             <td><%= matter["description"] %></td>
             <td><%= matter["status"] %></td>
+            <td>
+              <a href="<%= matter_path(id: matter["id"], back: request.original_url) %>" class="button">
+                View
+              </a>
+            </td>
           </tr>
         <% end %>
       </table>

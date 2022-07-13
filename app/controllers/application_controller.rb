@@ -128,7 +128,7 @@ class ApplicationController < ActionController::Base
       # Create user/account in your application here
       redirect_to ENV["CLIO_MANAGE_SITE_URL"] + "app_integrations_callback"
     else
-      redirect_to "/profile/index"
+      redirect_to "/profile"
     end
   end
 
@@ -155,6 +155,19 @@ class ApplicationController < ActionController::Base
       error_message: message,
       error_info: info
     }
+  end
+
+  def get_manage_token
+    # Ensure we still have the tokens obtained during authentication and authorization.
+    id_token = cookies.encrypted[:id_token]
+    manage_token = cookies.encrypted[:manage_token]
+
+    if id_token.blank? || manage_token.blank?
+      redirect_to root_path
+      return
+    end
+
+    manage_token
   end
 
 end

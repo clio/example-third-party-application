@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     get "signout"
   end
 
-  get "welcome/index"
-  get "profile/index"
-  get "matter/index"
-  get "matter/paginate"
+  resources :welcome, only: [:index]
+  resources :profile, only: [:index]
+  get "/matter/paginate", to: "matter#paginate"
+  resources :matter, only: [:index, :show]
 end
