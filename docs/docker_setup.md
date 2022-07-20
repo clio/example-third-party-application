@@ -10,8 +10,6 @@ Install Docker from [docs.docker.com/get-docker](https://docs.docker.com/get-doc
 
 Now that you have Docker installed you can build the image: `docker compose build`.
 
-Then create the database: `docker compose run sb_app rake db:create`.
-
-And  boot the app: `docker compose up`.
+And boot the app: `docker compose up`.
 
 The example third-party application should now be running at http://localhost:3013/.
