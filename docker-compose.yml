@@ -1,11 +1,5 @@
 version: '3.9'
 services:
-  sb_db:
-    image: postgres
-    volumes:
-      - ./tmp/db:/var/lib/postgresql/data
-    environment:
-      POSTGRES_PASSWORD: password
   sb_app:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3013 -b '0.0.0.0'"
@@ -13,8 +7,6 @@ services:
       - .:/Switchboard
     ports:
       - "3013:3013"
-    depends_on:
-      - sb_db
     extra_hosts:
       - "app.myclio.ca:${DOCKER_HOST_IP:-127.0.0.1}"
       - "account.myclio.ca:${DOCKER_HOST_IP:-127.0.0.1}"

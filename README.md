@@ -40,7 +40,7 @@ Then update the environment variables in `.env`:
     * `https://eu.app.clio.com/` for Europe
 3. Update the `CLIO_IDENTITY_CLIENT_ID` and `CLIO_IDENTITY_CLIENT_SECRET` values with your Clio Identity API Key and Secret
 
-You can then choose between a manual setup (install Ruby, Rails and Postgres locally) or a docker setup (install Docker only). Manual setup instructions can be found in [docs/manual_setup.md](/docs/manual_setup.md) and the Docker setup instructions can be found in [docs/docker_setup.md](/docs/docker_setup.md).
+You can then choose between a manual setup (install Ruby and Rails locally) or a docker setup (install Docker only). Manual setup instructions can be found in [docs/manual_setup.md](/docs/manual_setup.md) and the Docker setup instructions can be found in [docs/docker_setup.md](/docs/docker_setup.md).
 
 ## Example Entry Point
 
