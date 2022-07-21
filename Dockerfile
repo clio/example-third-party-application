@@ -4,8 +4,7 @@ RUN apt-get update -qq && apt-get install -y nodejs
 
 ENV APP_HOME /Switchboard
 WORKDIR $APP_HOME
-COPY Gemfile $APP_HOME/Gemfile
-COPY Gemfile.lock $APP_HOME/Gemfile.lock
+COPY . .
 
 RUN gem install bundler:2.2.21 && bundle install
 
@@ -17,4 +16,4 @@ ENTRYPOINT ["entrypoint.sh"]
 
 EXPOSE 3013
 
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["rails", "server", "-p", "3013", "-b", "0.0.0.0"]
