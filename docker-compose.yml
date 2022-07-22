@@ -3,6 +3,7 @@ services:
   sb_app:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3013 -b '0.0.0.0'"
+    image: "example-third-party-app"
     volumes:
       - .:/Switchboard
     ports:
