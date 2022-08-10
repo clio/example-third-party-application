@@ -14,7 +14,12 @@ class ApplicationController < ActionController::Base
   # redirected to the specified redirect URI in this request. In this example that is `identity_callback` seen below.
   def authenticate_with_identity
     identity_state = SecureRandom.hex
-    cookies.encrypted[:identity_state] = identity_state
+    cookies.encrypted[:identity_state] = {
+      value: identity_state,
+      same_site: "None",
+      secure: true,
+    }
+
     redirect_to identity_authenticate_url(identity_state)
   end
 
@@ -49,7 +54,11 @@ class ApplicationController < ActionController::Base
 
     # If validation passes, save the `id_token` for later use and move on to requesting
     # authorization in Manage.
-    cookies.encrypted[:id_token] = { value: decoded_token }
+    cookies.encrypted[:id_token] = {
+      value: decoded_token,
+      same_site: "None",
+      secure: true,
+    }
     authorize_with_manage
   rescue JwtDecodeError => e
     render_identity_error("JWT decode error", e.message)
@@ -67,7 +76,11 @@ class ApplicationController < ActionController::Base
   # be redirected to the specified redirect URI in this request. In this example that is `manage_callback` seen below.
   def authorize_with_manage
     manage_state = SecureRandom.hex
-    cookies.encrypted[:manage_state] = manage_state
+    cookies.encrypted[:manage_state] = {
+      value: manage_state,
+      same_site: "None",
+      secure: true,
+    }
     redirect_to manage_authorize_url(manage_state)
   end
 
@@ -105,7 +118,11 @@ class ApplicationController < ActionController::Base
     # (which is the lifepsan in seconds). You may want to save the `refresh_token` to refresh your access once the
     # access token expires. More information on refresh tokens can be found in the Clio API Documentation:
     # https://app.clio.com/api/v4/documentation#section/Authorization-with-OAuth-2.0/Oauth-Refresh-Tokens
-    cookies.encrypted[:manage_token] = parsed_response["access_token"]
+    cookies.encrypted[:manage_token] = {
+      value: parsed_response["access_token"],
+      same_site: "None",
+      secure: true,
+    }
 
     # Now your user is fully authenticated and authorized!
     #
@@ -157,17 +174,14 @@ class ApplicationController < ActionController::Base
     }
   end
 
-  def get_manage_token
+  def require_manage_token
     # Ensure we still have the tokens obtained during authentication and authorization.
-    id_token = cookies.encrypted[:id_token]
-    manage_token = cookies.encrypted[:manage_token]
+    @id_token = cookies.encrypted[:id_token]
+    @manage_token = cookies.encrypted[:manage_token]
 
-    if id_token.blank? || manage_token.blank?
+    if @id_token.blank? || @manage_token.blank?
       redirect_to root_path
-      return
     end
-
-    manage_token
   end
 
 end
