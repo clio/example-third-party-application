@@ -24,7 +24,7 @@ gem "turbolinks", "~> 5"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.5"
 
-gem "http"
+gem "http", "~> 2.2.2"
 gem "jwt", "2.3.0"
 gem "secure_headers", "6.3.1"
 
