@@ -18,7 +18,10 @@
       </form>
     </div>
     <div class="card-footer">
-      <a class="button" tabindex="0" href="<%= authenticate_with_identity_path %>"><img src="clio-logo-white.svg" /> Sign in with Clio</a>
+      <a class="button" tabindex="0" target="popup"
+       onclick="window.open('<%= authenticate_with_identity_path %>','targetWindow','height=600,width=800modal=yes'); return false;">
+        <img src="clio-logo-white.svg" /> Sign in with Clio
+      </a>
     </div>
     <div class="card-footer">
       <p>
