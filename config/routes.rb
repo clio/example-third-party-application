@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get "authenticate_with_identity"
     get "identity_callback"
     get "manage_callback"
+    get "auth_popup_callback"
     get "signout"
   end
 

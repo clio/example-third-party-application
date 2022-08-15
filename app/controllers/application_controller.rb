@@ -145,8 +145,13 @@ class ApplicationController < ActionController::Base
       # Create user/account in your application here
       redirect_to ENV["CLIO_MANAGE_SITE_URL"] + "app_integrations_callback"
     else
-      redirect_to "/profile"
+      redirect_to "/auth_popup_callback"
     end
+  end
+
+  # Upon succesful callback, we send a message to the main window
+  def auth_popup_callback
+    render plain: "<script>window.opener.postMessage('authentication_successful', 'http://localhost:3013');window.close();</script>", content_type: "text/html"
   end
 
   def signout
@@ -183,5 +188,4 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
-
 end
