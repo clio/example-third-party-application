@@ -1,5 +1,5 @@
 function receiveMessageFromPopup(event) {
-  if (event.origin !== "http://localhost:3013" || !event.isTrusted) {
+  if (!(event.origin === "http://localhost:3013" || event.origin === "https://example-third-party-application.clio.dev") || !event.isTrusted) {
     console.log("You are not worthy, received message from unknown source!");
   } else {
     if (event.data === "authentication_successful") {

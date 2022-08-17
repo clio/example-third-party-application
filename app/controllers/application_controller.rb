@@ -151,7 +151,7 @@ class ApplicationController < ActionController::Base
 
   # Upon succesful callback, we send a message to the main window
   def auth_popup_callback
-    render plain: "<script>window.opener.postMessage('authentication_successful', 'http://localhost:3013');window.close();</script>", content_type: "text/html"
+    render plain: "<script>window.opener.postMessage('authentication_successful', '" + ENV["ROOT_URL"] + "');window.close();</script>", content_type: "text/html"
   end
 
   def signout
