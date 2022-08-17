@@ -8,6 +8,6 @@ SecureHeaders::Configuration.default do |config|
     base_uri: %w('self'),
     style_src: %w('unsafe-inline' 'self'),
     form_action: %w('self'),
-    frame_ancestors: %w(*.app.clio.com app.myclio.ca:3000),
+    frame_ancestors: %w(*.app.clio.com app.clio.com app.myclio.ca:3000),
   }
 end
