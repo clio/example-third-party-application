@@ -67,8 +67,7 @@ class MatterController < ApplicationController
     end
 
     render "show", locals: {
-      matter: parsed_response["data"],
-      back: params[:back] || matter_index_path
+      matter: parsed_response["data"]
     }
   end
 end
