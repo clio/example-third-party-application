@@ -104,7 +104,7 @@ class ApplicationController < ActionController::Base
     end
 
     # Then we make a request for the Clio Manaage access token.
-    response = HTTP.headers("Content-Type" => "application/x-www-form-urlencoded").post(manage_token_url(params[:code]))
+    response = HTTP.headers("Content-Type" => "application/x-www-form-urlencoded").post(manage_token_url, form: manage_token_body(params[:code]))
     parsed_response = JSON.parse(response.body)
 
     # Make sure to handle any error cases.
