@@ -20,7 +20,7 @@ If you're already a Clio customer and are just looking to use our API for privat
 
 Clio Manage is the cloud-based legal practice management software that makes running a firm, organizing cases, and collaborating with clients from one place possible.
 
-Once your Developer Account has been set up, navigate to your [Developer Portal](http://app.clio.com/settings/developer_applications) within Clio Manage and follow our [intructions for creating a Clio application](https://app.clio.com/api/v4/documentation#section/Authorization-with-OAuth-2.0/Create-a-Clio-Application) on our Clio Manage API Documentation. Creating a Clio application will generate an application key and secret, which will be used to authorize your application with Clio and communicate with our Clio Manage API.
+Once your Developer Account has been set up, navigate to your [Developer Portal](http://app.clio.com/settings/developer_applications) within Clio Manage and follow our [instructions for creating a Clio application](https://app.clio.com/api/v4/documentation#section/Authorization-with-OAuth-2.0/Create-a-Clio-Application) on our Clio Manage API Documentation. Creating a Clio application will generate an application key and secret, which will be used to authorize your application with Clio and communicate with our Clio Manage API.
 
 ### Clio Identity API Keys
 
