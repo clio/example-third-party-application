@@ -4,7 +4,7 @@ Before continuing with this setup, ensure that you have your valid API key pairs
 
 ### Ruby and Rails
 
-This application utilizes Ruby `2.7.7` and Rails `6.1.7.8`. These can be installed through a variety of methods using different package managers, choose the right one for your system and preferences.
+This application utilizes Ruby `3.0.7` and Rails `6.1.7.8`. These can be installed through a variety of methods using different package managers, choose the right one for your system and preferences.
 
 ### Start
 
