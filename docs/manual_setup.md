@@ -17,7 +17,7 @@ bundle install
 Run the application:
 
 ```
-bundle exec rails s
+bundle exec rails s -p 3013
 ```
 
 The example third-party application should now be running at http://localhost:3013/.
