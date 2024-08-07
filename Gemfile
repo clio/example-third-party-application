@@ -25,7 +25,7 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 
 gem "http", "~> 5"
-gem "jwt", "2.3.0"
+gem "jwt", "2.5.0"
 gem "secure_headers", "6.3.1"
 
 group :development, :test do
