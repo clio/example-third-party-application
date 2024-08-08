@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
       secure: true,
     }
 
-    redirect_to identity_authenticate_url(identity_state)
+    redirect_to identity_authenticate_url(identity_state), allow_other_host: true
   end
 
   # This method is performing the steps under "Grant Approved" in the Integrating with Clio Identity documentation:
@@ -81,7 +81,7 @@ class ApplicationController < ActionController::Base
       same_site: "None",
       secure: true,
     }
-    redirect_to manage_authorize_url(manage_state)
+    redirect_to manage_authorize_url(manage_state), allow_other_host: true
   end
 
   # This method is performing the steps in step 2 of "Grant Type: Authorization Code" under "Obtaining Authorization"
@@ -143,7 +143,7 @@ class ApplicationController < ActionController::Base
     # we need to redirect them to our apps dashboard, which in this example is the profile page.
     if cookies.encrypted[:install_flow] == "1"
       # Create user/account in your application here
-      redirect_to ENV["CLIO_MANAGE_SITE_URL"] + "app_integrations_callback"
+      redirect_to ENV["CLIO_MANAGE_SITE_URL"] + "app_integrations_callback", allow_other_host: true
     else
       redirect_to "/auth_popup_callback"
     end
