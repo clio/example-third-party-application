@@ -1,4 +1,4 @@
-FROM ruby:3.1.6-bullseye
+FROM ruby:3.2.11-trixie
 
 RUN apt-get update -qq && apt-get install -y nodejs
 
