@@ -56,6 +56,6 @@ Meanwhile the `MatterController` (`app/controllers/matter_controller.rb`) uses t
 
 ## Support
 
-For technical inquiries, visit our [Clio Developers Help Center](https://developers.support.clio.com/hc/en-us), send us an email at api@clio.com, or visit our community-driven Slack workspace at [clio-public.slack.com](https://join.slack.com/t/clio-public/shared_invite/zt-qgkswsia-fyTprPgHGBR0TLAk7PENJw).
+For technical inquiries, visit our [Clio Developers Help Center](https://developers.support.clio.com/hc/en-us), send us an email at api@clio.com, or visit our community-driven Slack workspace at [clio-public.slack.com](https://join.slack.com/t/clio-public/shared_invite/zt-4d8pj2jxz-bxzPMDZItep8VRVu4~Weuw).
 
 For business and partnership inquiries, visit [https://www.clio.com/partnerships/developers/](https://www.clio.com/partnerships/developers/).
