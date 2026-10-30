@@ -3,4 +3,7 @@ inherit_from:
   - .rubocop-enforced.yml
   - .rubocop-disabled.yml
 AllCops:
-  TargetRubyVersion: 3.3
+  TargetRubyVersion: 4.0
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: always

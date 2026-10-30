@@ -5,7 +5,7 @@ module ManageAuthorizationHelper
       response_type: "code",
       client_id: ENV["CLIO_MANAGE_CLIENT_ID"],
       redirect_uri: ENV["ROOT_URL"] + "manage_callback",
-      state: state,
+      state:,
       redirect_on_decline: true
     }
     ENV["CLIO_MANAGE_SITE_URL"] + "oauth/authorize?" + params.to_query
@@ -20,7 +20,7 @@ module ManageAuthorizationHelper
       client_id: ENV["CLIO_MANAGE_CLIENT_ID"],
       client_secret: ENV["CLIO_MANAGE_CLIENT_SECRET"],
       grant_type: "authorization_code",
-      code: code,
+      code:,
       redirect_uri: ENV["ROOT_URL"] + "manage_callback"
     }
   end
