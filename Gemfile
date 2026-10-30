@@ -7,6 +7,12 @@ end
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "rails", "7.0.8.4"
+gem "logger"
+gem "benchmark"
+gem "bigdecimal"
+gem "ostruct"
+gem "mutex_m"
+gem "cgi"
 # Use Puma as the app server
 gem "puma"
 # Use SCSS for stylesheets
@@ -29,6 +35,8 @@ gem "jwt", "2.5.0"
 gem "secure_headers", "6.3.1"
 
 group :development, :test do
+  gem "minitest", "~> 5.0"
+  gem "irb"
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
   gem "byebug", platform: :mri
   gem "dotenv-rails"
@@ -43,6 +51,7 @@ group :development do
   gem "spring-watcher-listen"
   gem "pry"
   gem "pry-byebug"
+  gem "readline"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

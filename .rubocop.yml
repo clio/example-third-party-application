@@ -2,3 +2,5 @@ require: rubocop-rails
 inherit_from:
   - .rubocop-enforced.yml
   - .rubocop-disabled.yml
+AllCops:
+  TargetRubyVersion: 3.3
