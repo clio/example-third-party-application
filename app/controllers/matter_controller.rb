@@ -5,7 +5,7 @@ class MatterController < ApplicationController
   before_action :require_manage_token
 
   def index
-    # In this example we're getting the firms Matters using Unlimited Cursor Pagination
+    # In this example we're getting the firm's Matters using Unlimited Cursor Pagination
     # https://app.clio.com/api/v4/documentation#operation/Matter#index
     # https://app.clio.com/api/v4/documentation#section/Paging/Unlimited-Cursor-Pagination
     params = {

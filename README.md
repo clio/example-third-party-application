@@ -12,7 +12,7 @@ Note that this example code isn't in an ideal, refactored state. We've taken a "
 
 ## Prerequisites
 
-Whether you're a private developer or a company looking to integrate with Clio, the first step is to complete our [registration form](https://www.clio.com/partnerships/developers/get-started/). If you're looking to offer your integration to Clio customers, keep an eye out for an automatic follow-up email with instructions to setup your Developer Account on Clio Manage and Clio Identity.
+Whether you're a private developer or a company looking to integrate with Clio, the first step is to complete our [registration form](https://www.clio.com/partnerships/developers/get-started/). If you're looking to offer your integration to Clio customers, keep an eye out for an automatic follow-up email with instructions to set up your Developer Account on Clio Manage and Clio Identity.
 
 If you're already a Clio customer and are just looking to use our API for private use, you can get started right away.
 
