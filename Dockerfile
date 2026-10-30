@@ -1,4 +1,4 @@
-FROM ruby:3.3.12-trixie
+FROM ruby:4.0.9-trixie
 
 RUN apt-get update -qq && apt-get install -y nodejs
 
@@ -6,7 +6,7 @@ ENV APP_HOME /Switchboard
 WORKDIR $APP_HOME
 COPY . .
 
-RUN gem install bundler:2.2.21 && bundle install
+RUN gem install bundler:2.4.20 && bundle install
 
 COPY ./scripts/entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh

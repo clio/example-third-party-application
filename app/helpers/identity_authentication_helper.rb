@@ -9,7 +9,7 @@ module IdentityAuthenticationHelper
       client_id: ENV["CLIO_IDENTITY_CLIENT_ID"],
       redirect_uri: ENV["ROOT_URL"] + "identity_callback",
       scope: "openid",
-      state: state
+      state:
     }
     ENV["CLIO_IDENTITY_SITE_URL"] + "oauth2/auth?" + params.to_query
   end
@@ -23,7 +23,7 @@ module IdentityAuthenticationHelper
       client_id: ENV["CLIO_IDENTITY_CLIENT_ID"],
       client_secret: ENV["CLIO_IDENTITY_CLIENT_SECRET"],
       grant_type: "authorization_code",
-      code: code,
+      code:,
       redirect_uri: ENV["ROOT_URL"] + "identity_callback"
     }
   end
