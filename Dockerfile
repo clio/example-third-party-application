@@ -1,4 +1,4 @@
-FROM ruby:4.0.9-trixie
+FROM ruby:4.0.10-trixie
 
 RUN apt-get update -qq && apt-get install -y nodejs
 
