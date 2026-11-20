@@ -37,12 +37,12 @@ class ApplicationController < ActionController::Base
       return
     end
 
-    # Then we make a request for the Clio Identity related information from the users account.
+    # Then we make a request for the Clio Identity related information from the user's account.
     response = HTTP.post(identity_token_url, form: identity_token_body(params[:code]))
     parsed_response = JSON.parse(response.body)
 
     # Make sure to handle any error cases, such as if authentication fails or the user revokes
-    # your applications access grant.
+    # your application's access grant.
     if response.code != 200
       render_identity_error("error getting id token", parsed_response)
       return
@@ -103,7 +103,7 @@ class ApplicationController < ActionController::Base
       return
     end
 
-    # Then we make a request for the Clio Manaage access token.
+    # Then we make a request for the Clio Manage access token.
     response = HTTP.headers("Content-Type" => "application/x-www-form-urlencoded").post(manage_token_url, form: manage_token_body(params[:code]))
     parsed_response = JSON.parse(response.body)
 
@@ -114,8 +114,8 @@ class ApplicationController < ActionController::Base
     end
 
     # And save the `access_token` for future Manage API requests. Access tokens have a limited lifespan and will
-    # eventually expire. The expiry date and time can be calulcated with the `expires_in` value from the response
-    # (which is the lifepsan in seconds). You may want to save the `refresh_token` to refresh your access once the
+    # eventually expire. The expiry date and time can be calculated with the `expires_in` value from the response
+    # (which is the lifespan in seconds). You may want to save the `refresh_token` to refresh your access once the
     # access token expires. More information on refresh tokens can be found in the Clio API Documentation:
     # https://app.clio.com/api/v4/documentation#section/Authorization-with-OAuth-2.0/Oauth-Refresh-Tokens
     cookies.encrypted[:manage_token] = {
@@ -127,7 +127,7 @@ class ApplicationController < ActionController::Base
     # Now your user is fully authenticated and authorized!
     #
     # When a user adds your app to Clio Manage from the App Directory you are required to redirect them to a
-    # Clio Manage callback page (not your applications dashboard). This ensures that the user returns back to
+    # Clio Manage callback page (not your application's dashboard). This ensures that the user returns back to
     # the App Directory where they started. At this point in time, after the authentication and authorization
     # is complete, you'd create their account within your application before issuing this redirect. You can
     # read more about this process in this support article:
@@ -139,8 +139,8 @@ class ApplicationController < ActionController::Base
     # On the welcome page this query parameter is saved in a cookie and here we use it to determine next steps.
     #
     # If we are performing the "Add to Clio" flow we need to create the user and their account within our
-    # application then redirect to the Clio Manage callback page. If we performing the usual SSO login flow
-    # we need to redirect them to our apps dashboard, which in this example is the profile page.
+    # application then redirect to the Clio Manage callback page. If we are performing the usual SSO login flow
+    # we need to redirect them to our app's dashboard, which in this example is the profile page.
     if cookies.encrypted[:install_flow] == "1"
       # Create user/account in your application here
       redirect_to ENV["CLIO_MANAGE_SITE_URL"] + "app_integrations_callback", allow_other_host: true
@@ -149,7 +149,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # Upon succesful callback, we send a message to the main window
+  # Upon successful callback, we send a message to the main window
   def auth_popup_callback
     render plain: "<script>window.opener.postMessage('authentication_successful', '" + ENV["ROOT_URL"] + "');window.close();</script>", content_type: "text/html"
   end
